@@ -1,0 +1,137 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <100>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_bksp {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 5>;
+            layers = <0>;
+        };
+
+        combo_ent {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        combo_del {
+            bindings = <&kp DEL>;
+            key-positions = <28 29>;
+            layers = <0>;
+        };
+
+    };
+
+    macros {
+        macro0: macro0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N2 &kp N1 &kp N2 &kp N1 &kp N2 &kp N3>;
+            label = "MACRO0";
+        };
+        macro1: macro1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N2 &kp N1 &kp N2 &kp N1 &kp N2 &kp N3>;
+            label = "MACRO1";
+        };
+        macro2: macro2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N1 &kp N2 &kp N1 &kp N2 &kp N1 &kp N2 &kp N3>;
+            label = "MACRO2";
+        };
+    };
+
+    behaviors {
+        auto_shift: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // --------------------------------------------------------------------------------------------------------------------------------
+            // | ESC   |  1  |  2  |   3   |  4  |  5  |                  ---                |  6    |  7    |  8    |  9   | 0  |    BKSP   |
+            // | TAB   |  Q  |  W  |   E   |  R  |  T  |                  ---                |  Y    |  U    |  I    |  O   | P  |     -     |
+            // | CTRL  |  A  |  S  |   D   |  F  |  G  |                  ---                |  H    |  J    |  K    |  L   | ;  |     '     |
+            // | SHIFT |  Z  |  X  |   C   |  V  |  B  |                  ---                |  N    |  M    |  ,    |  .   | /  | SHFT(RET) |
+
+            bindings = <
+&kp ESC     &kp Q  &kp W     &kp E     &kp R        &kp T        &kp Y      &kp U  &kp I                        &kp O                    &kp P                      &kp BSPC
+&kp TAB     &kp A  &kp S     &kp D     &kp F        &kp G        &kp H      &kp J  &kp K                        &kp L                    &auto_shift LS(SEMI) SEMI  &kp ENTER
+&kp LSHIFT  &kp Z  &kp X     &kp C     &kp V        &kp B        &kp N      &kp M  &auto_shift LS(COMMA) COMMA  &auto_shift LS(DOT) DOT  &kp UP                     &kp DELETE
+&kp LCTRL   &mo 3  &kp LWIN  &kp LALT  &lt 1 SPACE  &lt 1 SPACE  &kp SPACE  &mo 2  &auto_shift LS(FSLH) FSLH    &kp LEFT                 &kp DOWN                   &kp RIGHT
+            >;
+        };
+
+        lower_layer {
+            // --------------------------------------------------------------------------------------------------------------------------------
+            // | ESC   |  1  |  2  |   3   |  4  |  5  |                  ---                |  6    |  7    |  8    |  9   | 0  |    BKSP   |
+            // | TAB   |  Q  |  W  |   E   |  R  |  T  |                  ---                |  Y    |  U    |  I    |  O   | P  |     -     |
+            // | CTRL  |  A  |  S  |   D   |  F  |  G  |                  ---                |  H    |  J    |  K    |  L   | ;  |     '     |
+            // | SHIFT |  Z  |  X  |   C   |  V  |  B  |                  ---                |  N    |  M    |  ,    |  .   | /  | SHFT(RET) |
+
+            bindings = <
+&trans  &auto_shift LS(N1) N1  &auto_shift LS(N2) N2  &auto_shift LS(N3) N3    &auto_shift LS(N4) N4   &auto_shift LS(N5) N5  &auto_shift LS(N7) N7  &auto_shift LS(N8) N8  &auto_shift LS(N9) N9  &kp KP_PLUS   &kp KP_ASTERISK  &trans
+&trans  &kp SQT                &kp DQT                &auto_shift UNDER MINUS  &auto_shift PLUS EQUAL  &kp ENTER              &auto_shift LS(N4) N4  &auto_shift LS(N5) N5  &auto_shift LS(N6) N6  &kp KP_MINUS  &kp KP_SLASH     &trans
+&trans  &kp HOME               &kp END                &kp LC(PAGE_UP)          &kp LC(PAGE_DOWN)       &kp BSLH               &auto_shift LS(N1) N1  &auto_shift LS(N2) N2  &auto_shift LS(N3) N3  &kp COMMA     &trans           &trans
+&trans  &trans                 &trans                 &trans                   &tog 1                  &tog 1                 &kp N0                 &kp N0                 &kp KP_DOT             &trans        &trans           &trans
+            >;
+        };
+
+        raise_layer {
+            // --------------------------------------------------------------------------------------------------------------------------------
+            // | ESC   |  1  |  2  |   3   |  4  |  5  |                  ---                |  6    |  7    |  8    |  9   | 0  |    BKSP   |
+            // | TAB   |  Q  |  W  |   E   |  R  |  T  |                  ---                |  Y    |  U    |  I    |  O   | P  |     -     |
+            // | CTRL  |  A  |  S  |   D   |  F  |  G  |                  ---                |  H    |  J    |  K    |  L   | ;  |     '     |
+            // | SHIFT |  Z  |  X  |   C   |  V  |  B  |                  ---                |  N    |  M    |  ,    |  .   | /  | SHFT(RET) |
+
+            bindings = <
+&auto_shift LS(GRAVE) GRAVE  &trans  &trans  &trans  &bootloader  &trans  &kp HOME             &kp HOME  &kp PAGE_UP    &kp PG_UP     &kp LC(P)                  &auto_shift LS(GRAVE) GRAVE
+&kp CLCK                     &trans  &trans  &trans  &trans       &trans  &kp END              &kp END   &kp PAGE_DOWN  &kp PG_DN     &auto_shift LS(LBKT) LBKT  &auto_shift LS(RBKT) RBKT
+&trans                       &trans  &trans  &trans  &trans       &trans  &kp LA(F4)           &kp LPAR  &kp RPAR       &bt BT_SEL 0  &bt BT_SEL 1               &bt BT_SEL 2
+&trans                       &trans  &trans  &trans  &trans       &trans  &kp C_AL_CALCULATOR  &trans    &kp LG(L)      &bt BT_SEL 3  &bt BT_SEL 4               &bt BT_CLR
+            >;
+        };
+
+        adjust_layer {
+            // --------------------------------------------------------------------------------------------------------------------------------
+            // | ESC   |  1  |  2  |   3   |  4  |  5  |                  ---                |  6    |  7    |  8    |  9   | 0  |    BKSP   |
+            // | TAB   |  Q  |  W  |   E   |  R  |  T  |                  ---                |  Y    |  U    |  I    |  O   | P  |     -     |
+            // | CTRL  |  A  |  S  |   D   |  F  |  G  |                  ---                |  H    |  J    |  K    |  L   | ;  |     '     |
+            // | SHIFT |  Z  |  X  |   C   |  V  |  B  |                  ---                |  N    |  M    |  ,    |  .   | /  | SHFT(RET) |
+
+            bindings = <
+&kp C_VOL_UP         &kp F1   &kp F2     &kp F3       &kp F4         &kp F5      &kp KP_NUMLOCK  &kp CLCK  &kp INSERT  &kp SCROLLLOCK  &kp PRINTSCREEN  &kp PAUSE_BREAK
+&kp C_VOL_DN         &kp F6   &kp F7     &kp F8       &kp F9         &kp F10     &trans          &trans    &trans      &trans          &trans           &trans
+&kp K_MUTE           &macro0  &macro1    &macro2      &kp F11        &kp F12     &trans          &trans    &trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2
+&kp C_AL_CALCULATOR  &trans   &kp LG(L)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LA(F4)  &trans          &trans    &trans      &bt BT_SEL 3    &bt BT_SEL 4     &bt BT_CLR
+            >;
+        };
+    };
+};
