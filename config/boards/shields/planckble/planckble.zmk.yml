@@ -2,7 +2,7 @@ file_format: "1"
 id: planckble
 name: Planck Duos BLE
 type: shield
-url: https://github.com/lemon0513/planckble.git
+url: https://github.com/lemon0513/plancksplit.git
 requires: [pro_micro]
 features:
   - keys
