@@ -97,7 +97,7 @@
             bindings = <
 &kp C_VOL_UP         &kp F1   &kp F2     &kp F3       &kp F4         &kp F5      &kp KP_NUMLOCK  &kp CLCK  &kp INSERT  &kp SCROLLLOCK  &kp PRINTSCREEN  &kp PAUSE_BREAK
 &kp C_VOL_DN         &kp F6   &kp F7     &kp F8       &kp F9         &kp F10     &trans          &trans    &trans      &trans          &trans           &trans
-&kp K_MUTE           &macro0  &macro1    &macro2      &kp F11        &kp F12     &trans          &trans    &trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2
+&kp K_MUTE           &macro0  &trans     &trans       &kp F11        &kp F12     &trans          &trans    &trans      &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2
 &kp C_AL_CALCULATOR  &trans   &kp LG(L)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LA(F4)  &trans          &trans    &trans      &bt BT_SEL 3    &bt BT_SEL 4     &bt BT_CLR
             >;
         };
