@@ -2,10 +2,10 @@ file_format: "1"
 id: planckble
 name: Planck Duos BLE
 type: shield
-url: https://github.com/lemon0513/plancksplit.git
+url: https://github.com/lemon0513/planckble.git
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - redox_left
-  - redox_right
+  - planckble_left
+  - planckble_right
