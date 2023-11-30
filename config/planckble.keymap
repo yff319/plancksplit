@@ -68,19 +68,19 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2     &kp N3    &kp N4        &kp N5     &kp N6     &kp N7         &kp N8     &kp N9     &kp N0    &kp BSPC
-&kp ESC     &trans  &trans     &trans    &kp C_VOL_DN  &trans     &kp UP     &kp PAGE_UP    &kp MINUS  &kp EQUAL  &kp SQT   &kp ENTER
-&kp LSHIFT  &trans  &trans     &trans    &kp C_VOL_UP  &trans     &kp DOWN   &kp PAGE_DOWN  &kp LBKT   &kp RBKT   &kp BSLH  &kp RSHIFT
-&to 0       &to 2   &kp LCTRL  &kp LALT  &kp LGUI      &kp SPACE  &kp SPACE  &trans         &trans     &trans     &trans    &trans
+&kp GRAVE   &kp N1  &kp N2     &kp N3    &kp N4        &kp N5          &kp N6     &kp N7         &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp ESC     &trans  &trans     &trans    &kp C_VOL_DN  &kp LANGUAGE_1  &kp UP     &kp PAGE_UP    &kp MINUS  &kp EQUAL  &kp SQT   &kp ENTER
+&kp LSHIFT  &trans  &trans     &trans    &kp C_VOL_UP  &kp LANGUAGE_2  &kp DOWN   &kp PAGE_DOWN  &kp LBKT   &kp RBKT   &kp BSLH  &kp RSHIFT
+&to 0       &to 2   &kp LCTRL  &kp LALT  &kp LGUI      &kp SPACE       &kp SPACE  &trans         &trans     &trans     &trans    &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3     &kp F4    &kp F5    &kp F6     &trans     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS         &kp BSPC
+&kp F7  &kp F8  &kp F9     &kp F10   &kp F11   &kp F12    &trans     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS        &kp ENTER
+&trans  &trans  &trans     &trans    &trans    &trans     &trans     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MULTIPLY  &kp DEL
+&to 0   &to 1   &kp LCTRL  &kp LALT  &kp LGUI  &kp SPACE  &kp SPACE  &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_ENTER     &kp KP_DIVIDE    &kp K_CALC
             >;
         };
 
