@@ -86,19 +86,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans     &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp INS  &kp BSPC
+&kp TAB  &trans  &trans  &trans  &trans  &trans     &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp ENTER
+&trans   &trans  &trans  &trans  &trans  &trans     &trans         &trans    &trans    &trans     &trans   &trans
+&to 0    &trans  &trans  &trans  &trans  &kp SPACE  &kp SPACE      &trans    &trans    &trans     &trans   &trans
             >;
         };
     };
