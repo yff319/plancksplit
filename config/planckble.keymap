@@ -16,29 +16,14 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_bksp {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <4 5>;
-        };
-
-        combo_ent {
-            bindings = <&kp ENTER>;
-            key-positions = <16 17>;
-        };
-
-        combo_del {
-            bindings = <&kp DEL>;
-            key-positions = <28 29>;
+        Mute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <16 28>;
+            layers = <1>;
         };
     };
 
     macros {
-        macro0: macro0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N1 &kp N2 &kp N1 &kp N2 &kp N1 &kp N2 &kp N3>;
-            label = "MACRO0";
-        };
     };
 
     behaviors {
@@ -51,6 +36,18 @@
             tapping-term-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
+        };
+
+        TD_up_down: TD_up_down {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TD_UP_DOWN";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <44>;
         };
     };
 
@@ -69,8 +66,8 @@
         layer_1 {
             bindings = <
 &kp GRAVE   &kp N1  &kp N2     &kp N3    &kp N4        &kp N5          &kp N6     &kp N7         &kp N8     &kp N9     &kp N0    &kp BSPC
-&kp ESC     &trans  &trans     &trans    &kp C_VOL_DN  &kp LANGUAGE_1  &kp UP     &kp PAGE_UP    &kp MINUS  &kp EQUAL  &kp SQT   &kp ENTER
-&kp LSHIFT  &trans  &trans     &trans    &kp C_VOL_UP  &kp LANGUAGE_2  &kp DOWN   &kp PAGE_DOWN  &kp LBKT   &kp RBKT   &kp BSLH  &kp RSHIFT
+&kp ESC     &trans  &trans     &trans    &kp C_VOL_DN  &kp LANGUAGE_1  &kp UP     &kp DOWN       &kp MINUS  &kp EQUAL  &kp SQT   &kp ENTER
+&kp LSHIFT  &trans  &trans     &trans    &kp C_VOL_UP  &kp LANGUAGE_2  &kp PG_UP  &kp PAGE_DOWN  &kp LBKT   &kp RBKT   &kp BSLH  &kp RSHIFT
 &to 0       &to 2   &kp LCTRL  &kp LALT  &kp LGUI      &kp SPACE       &kp SPACE  &trans         &trans     &trans     &trans    &trans
             >;
         };
