@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 &lt {
@@ -62,10 +61,10 @@
 
         layer_3 {
             bindings = <
-&kp ESC  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans     &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp INS  &kp BSPC
-&kp TAB  &trans        &trans        &trans        &trans  &trans     &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp ENTER
-&trans   &trans        &trans        &trans        &trans  &trans     &trans         &trans    &trans    &trans     &trans   &trans
-&to 0    &trans        &trans        &trans        &trans  &kp SPACE  &kp SPACE      &trans    &trans    &trans     &trans   &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans     &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp INS  &kp BSPC
+&kp TAB  &trans  &trans  &trans  &trans  &trans     &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp ENTER
+&trans   &trans  &trans  &trans  &trans  &trans     &trans         &trans    &trans    &trans     &trans   &trans
+&to 0    &trans  &trans  &trans  &trans  &kp SPACE  &kp SPACE      &trans    &trans    &trans     &trans   &trans
             >;
         };
     };
