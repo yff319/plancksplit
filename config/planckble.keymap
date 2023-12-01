@@ -27,28 +27,6 @@
     };
 
     behaviors {
-        auto_shift: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-        };
-
-        TD_up_down: TD_up_down {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TD_UP_DOWN";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <44>;
-        };
     };
 
     keymap {
