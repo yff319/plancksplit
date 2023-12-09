@@ -5,11 +5,12 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <100>;
+    tapping-term-ms = <175>;
 };
 
 / {
@@ -17,7 +18,7 @@
         compatible = "zmk,combos";
 
         Mute {
-            bindings = <&kp K_MUTE>;
+            bindings = <&kp C_MUTE>;
             key-positions = <16 28>;
             layers = <1>;
         };
@@ -27,28 +28,6 @@
     };
 
     behaviors {
-        auto_shift: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-        };
-
-        TD_up_down: TD_up_down {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TD_UP_DOWN";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <44>;
-        };
     };
 
     keymap {
@@ -56,19 +35,19 @@
 
         layer_0 {
             bindings = <
-&kp ESC     &kp Q  &kp W      &kp E     &kp R     &kp T        &kp Y        &kp U       &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB     &kp A  &kp S      &kp D     &kp F     &kp G        &kp H        &kp J       &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHIFT  &kp Z  &kp X      &kp C     &kp V     &kp B        &kp N        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-&to 2       &to 1  &kp LCTRL  &kp LALT  &kp LGUI  &lt 1 SPACE  &lt 1 SPACE  &lt 3 CAPS  &trans     &trans   &trans    &trans
+&kp ESC     &kp Q  &kp W      &kp E     &kp R     &kp T        &kp Y        &kp U       &kp I        &kp O    &kp P     &kp BSPC
+&kp TAB     &kp A  &kp S      &kp D     &kp F     &kp G        &kp H        &kp J       &kp K        &kp L    &kp SEMI  &kp ENTER
+&kp LSHIFT  &kp Z  &kp X      &kp C     &kp V     &kp B        &kp N        &kp M       &kp COMMA    &kp DOT  &kp FSLH  &kp RSHIFT
+&to 2       &to 1  &kp LCTRL  &kp LALT  &kp LGUI  &lt 1 SPACE  &lt 1 SPACE  &lt 3 CAPS  &mt UP DOWN  &trans   &trans    &mt PG_UP PG_DN
             >;
         };
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2     &kp N3    &kp N4        &kp N5          &kp N6     &kp N7         &kp N8     &kp N9     &kp N0    &kp BSPC
-&kp ESC     &trans  &trans     &trans    &kp C_VOL_DN  &kp LANGUAGE_1  &kp UP     &kp DOWN       &kp MINUS  &kp EQUAL  &kp SQT   &kp ENTER
-&kp LSHIFT  &trans  &trans     &trans    &kp C_VOL_UP  &kp LANGUAGE_2  &kp PG_UP  &kp PAGE_DOWN  &kp LBKT   &kp RBKT   &kp BSLH  &kp RSHIFT
-&to 0       &to 2   &kp LCTRL  &kp LALT  &kp LGUI      &kp SPACE       &kp SPACE  &trans         &trans     &trans     &trans    &trans
+&kp GRAVE   &kp N1        &kp N2     &kp N3    &kp N4     &kp N5     &kp N6     &kp N7          &kp N8     &kp N9        &kp N0        &kp BSPC
+&kp ESC     &kp C_VOL_DN  &trans     &trans    &kp DOWN   &kp UP     &trans     &kp LANGUAGE_1  &kp MINUS  &kp EQUAL     &kp SQT       &kp ENTER
+&kp LSHIFT  &kp C_VOL_UP  &trans     &trans    &kp PG_DN  &kp PG_UP  &trans     &kp LANGUAGE_2  &kp LBKT   &kp RBKT      &kp BSLH      &kp RSHIFT
+&to 0       &to 2         &kp LCTRL  &kp LALT  &kp LGUI   &kp SPACE  &kp SPACE  &trans          &trans     &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
             >;
         };
 
@@ -91,3 +70,5 @@
         };
     };
 };
+
+
