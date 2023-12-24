@@ -17,9 +17,9 @@
     combos {
         compatible = "zmk,combos";
 
-        Mute {
+        mute {
             bindings = <&kp C_MUTE>;
-            key-positions = <16 28>;
+            key-positions = <31 19>;
             layers = <1>;
         };
     };
