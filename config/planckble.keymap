@@ -16,12 +16,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        mute {
-            bindings = <&kp C_MUTE>;
-            key-positions = <31 19>;
-            layers = <0>;
-        };
     };
 
     macros {
