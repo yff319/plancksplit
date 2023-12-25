@@ -10,7 +10,7 @@
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <170>;
 };
 
 / {
@@ -20,7 +20,7 @@
         mute {
             bindings = <&kp C_MUTE>;
             key-positions = <31 19>;
-            layers = <1>;
+            layers = <0>;
         };
     };
 
