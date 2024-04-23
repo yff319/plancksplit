@@ -14,23 +14,15 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-    };
-
-    macros {
-    };
-
-    behaviors {
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&kp ESC    &kp Q  &kp W     &kp E      &kp R     &kp T        &kp Y        &kp U       &kp I        &kp O      &kp P     &kp BSPC
-&kp TAB    &kp A  &kp S     &kp D      &kp F     &kp G        &kp H        &kp J       &kp K        &kp L      &kp SEMI  &kp ENTER
+&kp TAB    &kp Q  &kp W     &kp E      &kp R     &kp T        &kp Y        &kp U       &kp I        &kp O      &kp P     &kp BSPC
+&kp ESC    &kp A  &kp S     &kp D      &kp F     &kp G        &kp H        &kp J       &kp K        &kp L      &kp SEMI  &kp ENTER
 &kp LSHFT  &kp Z  &kp X     &kp C      &kp V     &kp B        &kp N        &kp M       &kp COMMA    &kp DOT    &kp FSLH  &kp RSHFT
 &to 2      &to 1  &kp LALT  &kp LCTRL  &kp LGUI  &lt 1 SPACE  &lt 1 SPACE  &lt 3 CAPS  &mt UP DOWN  &kp RCTRL  &kp RALT  &mt PG_UP PG_DN
             >;
@@ -47,8 +39,8 @@
 
         layer_2 {
             bindings = <
-&kp ESC    &kp F1   &kp F2    &kp F3      &kp F4    &kp F5     &none      &kp KP_N7  &kp KP_N8   &kp KP_N9     &kp KP_PLUS      &kp BSPC
-&kp TAB    &kp F6   &kp F7    &kp F8      &kp F9    &kp F10    &none      &kp KP_N4  &kp KP_N5   &kp KP_N6     &kp KP_MINUS     &kp ENTER
+&kp TAB    &kp F1   &kp F2    &kp F3      &kp F4    &kp F5     &none      &kp KP_N7  &kp KP_N8   &kp KP_N9     &kp KP_PLUS      &kp BSPC
+&kp ESC    &kp F6   &kp F7    &kp F8      &kp F9    &kp F10    &none      &kp KP_N4  &kp KP_N5   &kp KP_N6     &kp KP_MINUS     &kp ENTER
 &kp LSHFT  &kp F11  &kp F12   &bt BT_CLR  &none     &none      &none      &kp KP_N1  &kp KP_N2   &kp KP_N3     &kp KP_MULTIPLY  &kp DEL
 &to 0      &to 1    &kp LALT  &kp LCTRL   &kp LGUI  &kp SPACE  &kp SPACE  &kp KP_N0  &kp KP_DOT  &kp KP_ENTER  &kp KP_DIVIDE    &none
             >;
@@ -56,8 +48,8 @@
 
         layer_3 {
             bindings = <
-&kp ESC    &none  &none     &none      &none     &none      &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp INS  &kp BSPC
-&kp TAB    &none  &none     &none      &none     &none      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp ENTER
+&kp TAB    &none  &none     &none      &none     &none      &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp INS  &kp BSPC
+&kp ESC    &none  &none     &none      &none     &none      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp ENTER
 &kp LSHFT  &none  &none     &none      &none     &none      &none      &none     &none     &none      &none    &kp RSHFT
 &to 0      &none  &kp LALT  &kp LCTRL  &kp LGUI  &kp SPACE  &kp SPACE  &none     &none     &none      &none    &none
             >;
